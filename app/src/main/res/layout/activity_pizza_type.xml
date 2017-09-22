@@ -1,43 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:padding="16dp"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <RadioButton
-        android:id="@+id/radioButton11"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="RadioButton" />
+        android:layout_weight="1"
+        android:text="Select a type of pizza:"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-    <RadioButton
-        android:id="@+id/radioButton10"
+    <RadioGroup
+        android:id="@+id/pizzaType"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="RadioButton" />
+        android:layout_height="match_parent"
+        >
 
-    <RadioButton
-        android:id="@+id/radioButton9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="RadioButton" />
+        <RadioButton
+            android:id="@+id/canadian_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:text="Canadian" />
 
-    <RadioButton
-        android:id="@+id/radioButton8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="RadioButton" />
+        <RadioButton
+            android:id="@+id/italian_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:text="Italian" />
 
-    <RadioButton
-        android:id="@+id/radioButton7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:text="RadioButton" />
+        <RadioButton
+            android:id="@+id/cheese_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:text="Cheese" />
+
+        <RadioButton
+            android:id="@+id/hawaiian_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:text="Hawaiian" />
+
+        <RadioButton
+            android:id="@+id/chicago_raio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:text="Chicago" />
+    </RadioGroup>
+
 </LinearLayout>
