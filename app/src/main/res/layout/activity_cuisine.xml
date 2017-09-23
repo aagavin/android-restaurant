@@ -10,9 +10,9 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Select a type of pizza:"
+        android:text="@string/select_a_type_of_cuisine"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Canadian" />
+            android:text="Chinese" />
 
         <RadioButton
             android:id="@+id/italian_radio"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Cheese" />
+            android:text="Burgers" />
 
         <RadioButton
             android:id="@+id/hawaiian_radio"
@@ -53,15 +53,15 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Hawaiian" />
+            android:text="Pizza" />
 
         <RadioButton
-            android:id="@+id/chicago_raio"
+            android:id="@+id/greek_radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Chicago" />
+            android:text="Greek" />
     </RadioGroup>
 
 </LinearLayout>
