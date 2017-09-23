@@ -29,9 +29,17 @@ public class SelectMenu extends AppCompatActivity {
                 new MenuItem("General Tsao's Chicken", 9.95, R.drawable.generaltso, "Chicken cubes coated in cornstarch and deep-fried, cooked with a sauce that includes hoisin sauce, dark soy sauce and chili peppers.")
 
         )));
-//        this._restaurant.put("Italian", new ArrayList<>(Arrays.asList(
-//                new MenuItem("General Tsao's Chicken")
-//        )));
+        this._restaurant.put("Italian", new ArrayList<>(Arrays.asList(
+                new MenuItem("Antipasto Platter", 5.34, R.drawable.antipastopatter, "A traditional antipasto of cured meats, olives, peperoncini, mushrooms, anchovies, artichoke hearts, various cheeses"),
+                new MenuItem("Calzone", 9.97, R.drawable.calzone, "Salted bread dough, baked in an oven and stuffed with salami or ham, mozzarella, ricotta and Parmesan or pecorino cheese"),
+                new MenuItem("Fettuccine Alfredo", 10.15, R.drawable.alfredo, "A pasta dish made from fettuccine noodles tossed with Parmigiano-Reggiano cheese and butter."),
+                new MenuItem("Prosciutto", 6.45, R.drawable.prosciutto,"Dry-cured ham that is thinly sliced and served uncooked.")
+        )));
+        this._restaurant.put("Burgers", new ArrayList<>(Arrays.asList(
+                new MenuItem("Buffalo Burger", 12.99, R.drawable.buffaloburgers, "Prepared with meat from Bison, buffalo burgers have less cholesterol, less fat, and fewer calories than beef hamburgers and chicken hamburgers."),
+                new MenuItem("Veggie burger", 8.99, R.drawable.veggieburger, "Veggie burger is made with tofu, beans, and an assortment of vegetables."),
+                new MenuItem("Cheeseburger", 10.01, R.drawable.cheeseburger, "Hamburger accompanied with melted cheese. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.    `")
+        )));
 
 
     }
@@ -51,28 +59,33 @@ public class SelectMenu extends AppCompatActivity {
 
         // get all menu items from user selection
         for(MenuItem item : this._restaurant.get(selection)){
-            LinearLayout container = new LinearLayout(this);
-
-            ImageView img = new ImageView(this);
-            img.setLayoutParams(new LinearLayout.LayoutParams(
-                    (int)(100 * density),
-                    (int)(75*density))
-            );
-            img.setImageResource(item.getImage());
-
-            CheckBox box = new CheckBox(this);
-            box.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.MATCH_PARENT
-            ));
-            box.setText(item.getName());
-
-            container.addView(img);
-            container.addView(box);
-
-            rootLayout.addView(container);
+            this._addRow(density, item);
         }
 
 
+    }
+
+    private void _addRow(float density, MenuItem item) {
+        LinearLayout container = new LinearLayout(this);
+
+        ImageView img = new ImageView(this);
+        img.setLayoutParams(new LinearLayout.LayoutParams(
+                (int)(100 * density),
+                (int)(75*density))
+        );
+        img.setImageResource(item.getImage());
+
+        CheckBox box = new CheckBox(this);
+        box.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+        ));
+        box.setText(item.getName()+" ($"+item.getPrice()+")");
+        box.setTextSize(5*density);
+
+        container.addView(img);
+        container.addView(box);
+
+        rootLayout.addView(container,0);
     }
 }
