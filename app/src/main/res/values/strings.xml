@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Keanu\'s Pizza</string>
+    <string name="app_name">Aaron Eats</string>
+    <string name="enter_home">Enter</string>
+    <string name="main_logo_text">main logo</string>
 </resources>

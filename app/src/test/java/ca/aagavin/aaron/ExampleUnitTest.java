@@ -1,4 +1,4 @@
-package ca.aagavin.keanu;
+package ca.aagavin.aaron;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package ca.aagavin.keanu;
+package ca.aagavin.aaron;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnClick(View view){
-        startActivity(new Intent(this, PizzaType.class));
+        startActivity(new Intent(this, CuisineType.class));
     }
 
 }
