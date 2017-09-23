@@ -10,7 +10,7 @@ public class MenuItem {
 
     private double price;
 
-    private String image;
+    private int image;
 
     private String Description;
 
@@ -30,11 +30,11 @@ public class MenuItem {
         this.price = price;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
@@ -46,7 +46,7 @@ public class MenuItem {
         Description = description;
     }
 
-    public MenuItem(String name, double price, String image, String description) {
+    public MenuItem(String name, double price, int image, String description) {
         this.name = name;
         this.price = price;
         this.image = image;
