@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Keanu\'s Pizza</string>
+    <string name="app_name">Aaron Eats</string>
+    <string name="enter_home">Enter</string>
+    <string name="main_logo_text">main logo</string>
+    <string name="select_a_type_of_cuisine">Select a type of cuisine:</string>
 </resources>

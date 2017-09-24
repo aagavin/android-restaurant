@@ -1,4 +1,4 @@
-package ca.aagavin.keanu;
+package ca.aagavin.aaron;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
