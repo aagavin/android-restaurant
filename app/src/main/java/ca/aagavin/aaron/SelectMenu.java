@@ -83,7 +83,7 @@ public class SelectMenu extends AppCompatActivity {
 
     /**
      * Handles when a user clicks on a screen
-     * @param price price to update by
+     * @param price amount to update by
      * @return OnCheckedChangeListener
      */
     @NonNull
@@ -104,6 +104,9 @@ public class SelectMenu extends AppCompatActivity {
         };
     }
 
+    /**
+     * Sets up data structure to hold the menu
+     */
     private void _createMenu(){
         this._restaurant = new HashMap<>();
         this._restaurant.put("Chinese", new ArrayList<>(Arrays.asList(
