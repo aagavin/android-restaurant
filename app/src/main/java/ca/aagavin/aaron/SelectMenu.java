@@ -117,28 +117,44 @@ public class SelectMenu extends AppCompatActivity {
     private void _createMenu(){
         this._restaurant = new HashMap<>();
         this._restaurant.put("Chinese", new ArrayList<>(Arrays.asList(
-                new MenuItem("Spring Rolls", 3.25, R.drawable.springrolls, "A lighter, more delicate version of egg rolls, made with a flour and water wrapper."),
-                new MenuItem("Deep Fried Wontons", 2.45, R.drawable.wonton, "Wonton wrappers filled with ground pork and a variety of vegetables and seasonings before deep-frying."),
-                new MenuItem("Chow Mein", 7.25, R.drawable.chowmein, "A stir-fried dish consisting of noodles, meat, onions and celery."),
-                new MenuItem("General Tsao's Chicken", 9.95, R.drawable.generaltso, "Chicken cubes coated in cornstarch and deep-fried, cooked with a sauce that includes hoisin sauce, dark soy sauce and chili peppers.")
+                new MenuItem("Spring Rolls", 3.25, R.drawable.springrolls, "A lighter, more delicate version of egg rolls, made with a flour and water wrapper.", "ManChi's"),
+                new MenuItem("Deep Fried Wontons", 2.45, R.drawable.wonton, "Wonton wrappers filled with ground pork and a variety of vegetables and seasonings before deep-frying.", "ManChi's"),
+                new MenuItem("Chow Mein", 7.25, R.drawable.chowmein, "A stir-fried dish consisting of noodles, meat, onions and celery.", "HeyChina"),
+                new MenuItem("Egg Drop Soup", 7.05, R.drawable.eggDropSoup, "A classic dish -  flavored chicken broth or stock topped with silken threads of egg.", "HeyChina"),
+                new MenuItem("bangBangJi.jpgChicken and sweet corn soup", 6.05, R.drawable.chickensoup, "Chicken stock with creamed sweet corn, sweet corn kernels and eggs. The texture of this soup is often thick.", "Tim's Chinese Food"),
+                new MenuItem("Bang Bang Ji", 6.05, R.drawable.bangBangJi, "Chicken breasts are cut into matchstick sized pieces and served on a sheet of green bean paste. Made with hot chili oil.", "Tim's Chinese Food"),
+                new MenuItem("Lo Mein", 6.45, R.drawable.loMein, "Tossed Noodles - unlike chow mein, where the noodles are stir-fried separately, the noodles are tossed and blended with the stir-fry mixture.  They have more of a sauce than chow mein noodles.", "Pearl Harbourfront"),
+                new MenuItem("General Tsao's Chicken", 9.95, R.drawable.generaltso, "Chicken cubes coated in cornstarch and deep-fried, cooked with a sauce that includes hoisin sauce, dark soy sauce and chili peppers.", "Pearl Harbourfront")
 
         )));
         this._restaurant.put("Italian", new ArrayList<>(Arrays.asList(
-                new MenuItem("Antipasto Platter", 5.34, R.drawable.antipastopatter, "A traditional antipasto of cured meats, olives, peperoncini, mushrooms, anchovies, artichoke hearts, various cheeses"),
-                new MenuItem("Calzone", 9.97, R.drawable.calzone, "Salted bread dough, baked in an oven and stuffed with salami or ham, mozzarella, ricotta and Parmesan or pecorino cheese"),
-                new MenuItem("Fettuccine Alfredo", 10.15, R.drawable.alfredo, "A pasta dish made from fettuccine noodles tossed with Parmigiano-Reggiano cheese and butter."),
-                new MenuItem("Prosciutto Platter", 7.45, R.drawable.prosciutto,"Dry-cured ham that is thinly sliced and served uncooked.")
+                new MenuItem("Antipasto Platter", 5.34, R.drawable.antipastopatter, "A traditional antipasto of cured meats, olives, peperoncini, mushrooms, anchovies, artichoke hearts, various cheeses", "Remezzo Italian Bistro"),
+                new MenuItem("Calzone", 9.97, R.drawable.calzone, "Salted bread dough, baked in an oven and stuffed with salami or ham, mozzarella, ricotta and Parmesan or pecorino cheese", "Remezzo Italian Bistro"),
+                new MenuItem("Fettuccine Alfredo", 10.15, R.drawable.alfredo, "A pasta dish made from fettuccine noodles tossed with Parmigiano-Reggiano cheese and butter.", "Stelvio"),
+                new MenuItem("Prosciutto Platter", 7.45, R.drawable.prosciutto,"Dry-cured ham that is thinly sliced and served uncooked.", "Stelvio"),
+                new MenuItem("Risotto", 7.45, R.drawable.risotto,"seasonal dishes such as spring or summer risotto, which adds in various herbs and seasonal veggies like asparagus.", "Donatello Restaurant"),
+                new MenuItem("Ravioli", 7.45, R.drawable.ravioli,"Includes ricotta and spinach, perfect for the veggie traveler.", "Donatello Restaurant"),
+                new MenuItem("Gnocchi", 7.45, R.drawable.gnocchi,"flour dumpling, are created in various flavors and styles. Vegetarians will enjoy the “pomodoro style,” sauce and cheese. Meat lovers can find a slab of fine meat", "Old Spaghetti Factory"),
+                new MenuItem("Americano", 7.45, R.drawable.americano,"Known as caffee. We serve all traditional shots of Italian espresso", "Old Spaghetti Factory")
         )));
         this._restaurant.put("Burgers", new ArrayList<>(Arrays.asList(
-                new MenuItem("Buffalo Burger", 13.99, R.drawable.buffaloburgers, "Prepared with meat from Bison, buffalo burgers have less cholesterol, less fat, and fewer calories than beef hamburgers and chicken hamburgers."),
-                new MenuItem("Veggie burger", 8.99, R.drawable.veggieburger, "Veggie burger is made with tofu, beans, and an assortment of vegetables."),
-                new MenuItem("Cheeseburger", 10.01, R.drawable.cheeseburger, "Hamburger accompanied with melted cheese. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt."),
-                new MenuItem("Australasian Burgers", 15.14, R.drawable.newzealand, "Popular regional hamburger in Australia and New Zealand includes canned beetroot and pineapple")
+                new MenuItem("Buffalo Burger", 13.99, R.drawable.buffaloburgers, "Prepared with meat from Bison, buffalo burgers have less cholesterol, less fat, and fewer calories than beef hamburgers and chicken hamburgers.", "Union Burger"),
+                new MenuItem("Veggie burger", 8.99, R.drawable.veggieburger, "Veggie burger is made with tofu, beans, and an assortment of vegetables.", "Union Burger"),
+                new MenuItem("Cheeseburger", 10.01, R.drawable.cheeseburger, "Hamburger accompanied with melted cheese. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.", "Museum Tavern"),
+                new MenuItem("Australasian Burgers", 15.14, R.drawable.newzealand, "Popular regional hamburger in Australia and New Zealand includes canned beetroot and pineapple", "Museum Tavern"),
+                new MenuItem("Angus burger", 12.14, R.drawable.angus, "A hamburger made using beef from Angus cattle", "Woody's Burgers"),
+                new MenuItem("Bøfsandwich", 15.14, R.drawable.danishSandwich, "Classic Danish take on a hamburger. It contains the hamburger elements of a cooked ground beef patty placed inside a sliced bread roll", "Woody's Burgers"),
+                new MenuItem("Butter burger", 15.14, R.drawable.butterDouble, "Made with a buttered bun, butter as one of the ingredients of the patty or with a pat of butter on top of the burger patty.", "Five Guys"),
+                new MenuItem("Sloppy joes", 15.14, R.drawable.sloppyJoe, "A sandwich consisting of ground beef, onions, tomato sauce or ketchup, Worcestershire sauce, and other seasonings, served on a hamburger bun.", "Five Guys")
         )));
         this._restaurant.put("Pizza", new ArrayList<>(Arrays.asList(
-                new MenuItem("Authentic Neapolitan pizza", 21.13, R.drawable.neapolitanpizza, "Made with San Marzano tomatoes and mozzarella cheese"),
+                new MenuItem("Neapolitan pizza", 21.13, R.drawable.neapolitanpizza, "Made with San Marzano tomatoes and mozzarella cheese"),
                 new MenuItem("Hawaiian pizza", 21.10, R.drawable.pineapplepizza, "Topped with tomato sauce, cheese, pineapple,Canadian bacon and ham"),
                 new MenuItem("Meatball pizza", 23.45, R.drawable.panmeatball, "Prepared with meatballs. Increasingly popular in Upstate New York in contemporary times"),
+                new MenuItem("Chicago-style deep-dish pizza", 28.11, R.drawable.deepdish, "High edge and a deep surface for large amounts of cheese and chunky tomato sauce topped with pepperoni"),
+                new MenuItem("Sicilian Pizza", 28.11, R.drawable.sicilian, "square cut, thick crust pizza from, it should always have a spongier consistency than other pizzas."),
+                new MenuItem("Greek Pizza", 28.11, R.drawable.greekPizza, "baked in a round pan that has been heavily coated in olive oil. Lining the pan with oil also allows the bottom of the dough to fry while it bakes."),
+                new MenuItem("Chicago-style deep-dish pizza", 28.11, R.drawable.deepdish, "High edge and a deep surface for large amounts of cheese and chunky tomato sauce topped with pepperoni"),
                 new MenuItem("Chicago-style deep-dish pizza", 28.11, R.drawable.deepdish, "High edge and a deep surface for large amounts of cheese and chunky tomato sauce topped with pepperoni")
         )));
         this._restaurant.put("Greek", new ArrayList<>(Arrays.asList(
