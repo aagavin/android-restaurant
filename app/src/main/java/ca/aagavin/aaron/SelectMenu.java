@@ -3,6 +3,7 @@ package ca.aagavin.aaron;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -38,7 +39,7 @@ public class SelectMenu extends AppCompatActivity {
         // get user selection from previous section
         String selection = getIntent().getStringExtra("selection");
 
-        // get all menu items from user selection
+        // get all resturant items from user selection
         for(MenuItem item : this._restaurant.get(selection)){
             this._addRow(density, item);
         }
@@ -46,10 +47,16 @@ public class SelectMenu extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.resturant, menu);
+        return true;
+    }
+
     /**
      * Adds a row of elements dynamically
      * @param density screen size
-     * @param item menu item
+     * @param item resturant item
      */
     private void _addRow(float density, MenuItem item) {
         // create container layout
@@ -105,7 +112,7 @@ public class SelectMenu extends AppCompatActivity {
     }
 
     /**
-     * Sets up data structure to hold the menu
+     * Sets up data structure to hold the resturant
      */
     private void _createMenu(){
         this._restaurant = new HashMap<>();
