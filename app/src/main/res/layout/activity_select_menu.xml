@@ -52,7 +52,8 @@
             android:text="Total: $0.00"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary_text"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </ScrollView>

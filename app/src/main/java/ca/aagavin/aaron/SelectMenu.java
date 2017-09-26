@@ -4,11 +4,13 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,9 +31,13 @@ public class SelectMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_menu);
+//        _displayMenu();
+    }
 
-        this._createMenu();
-        _totalText = (TextView) findViewById(R.id.totalText);
+    private void _displayMenu() {
+        this._createRestaurantMenu();
+        this._totalText = (TextView) findViewById(R.id.totalText);
+        this._totalText.setVisibility(View.VISIBLE);
         float density = this.getResources().getDisplayMetrics().density;
 
         // get root LinearLayout
@@ -43,8 +49,13 @@ public class SelectMenu extends AppCompatActivity {
         for(MenuItem item : this._restaurant.get(selection)){
             this._addRow(density, item);
         }
+    }
 
-
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        Toast.makeText(this, "You selected something", Toast.LENGTH_LONG).show();
+        this._displayMenu();
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -114,7 +125,7 @@ public class SelectMenu extends AppCompatActivity {
     /**
      * Sets up data structure to hold the resturant
      */
-    private void _createMenu(){
+    private void _createRestaurantMenu(){
         this._restaurant = new HashMap<>();
         this._restaurant.put("Chinese", new ArrayList<>(Arrays.asList(
                 new MenuItem("Spring Rolls", 3.25, R.drawable.springrolls, "A lighter, more delicate version of egg rolls, made with a flour and water wrapper.", "ManChi's"),
