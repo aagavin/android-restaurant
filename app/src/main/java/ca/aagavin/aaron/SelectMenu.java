@@ -26,12 +26,15 @@ public class SelectMenu extends AppCompatActivity {
     private Map<String, List<MenuItem>> _restaurant;
     private LinearLayout _rootLayout;
     private TextView _totalText;
+    private String _cuisineType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_menu);
-//        _displayMenu();
+
+        this._cuisineType = getIntent().getStringExtra("selection");
+
     }
 
     private void _displayMenu() {
@@ -41,12 +44,12 @@ public class SelectMenu extends AppCompatActivity {
         float density = this.getResources().getDisplayMetrics().density;
 
         // get root LinearLayout
-        _rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
+        this._rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
         // get user selection from previous section
-        String selection = getIntent().getStringExtra("selection");
+        //this._cuisineType = getIntent().getStringExtra("selection");
 
-        // get all resturant items from user selection
-        for(MenuItem item : this._restaurant.get(selection)){
+        // get all resturantchinese items from user selection
+        for(MenuItem item : this._restaurant.get(this._cuisineType)){
             this._addRow(density, item);
         }
     }
@@ -60,14 +63,35 @@ public class SelectMenu extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.resturant, menu);
+
+        switch (this._cuisineType){
+            case "Chinese":
+                getMenuInflater().inflate(R.menu.resturantchinese, menu);
+                break;
+            case "Italian":
+                getMenuInflater().inflate(R.menu.resturantit, menu);
+                break;
+            case "Burgers":
+                getMenuInflater().inflate(R.menu.resturantbn, menu);
+                break;
+            case "Pizza":
+                getMenuInflater().inflate(R.menu.resturantpz, menu);
+                break;
+            case "Greek":
+                getMenuInflater().inflate(R.menu.resturantgk, menu);
+                break;
+            default:
+                break;
+        }
+
+        getMenuInflater().inflate(R.menu.resturantchinese, menu);
         return true;
     }
 
     /**
      * Adds a row of elements dynamically
      * @param density screen size
-     * @param item resturant item
+     * @param item resturantchinese item
      */
     private void _addRow(float density, MenuItem item) {
         // create container layout
@@ -123,7 +147,7 @@ public class SelectMenu extends AppCompatActivity {
     }
 
     /**
-     * Sets up data structure to hold the resturant
+     * Sets up data structure to hold the resturantchinese
      */
     private void _createRestaurantMenu(){
         this._restaurant = new HashMap<>();
@@ -132,7 +156,7 @@ public class SelectMenu extends AppCompatActivity {
                 new MenuItem("Deep Fried Wontons", 2.45, R.drawable.wonton, "Wonton wrappers filled with ground pork and a variety of vegetables and seasonings before deep-frying.", "ManChi's"),
                 new MenuItem("Chow Mein", 7.25, R.drawable.chowmein, "A stir-fried dish consisting of noodles, meat, onions and celery.", "HeyChina"),
                 new MenuItem("Egg Drop Soup", 7.05, R.drawable.eggdropsoup, "A classic dish -  flavored chicken broth or stock topped with silken threads of egg.", "HeyChina"),
-                new MenuItem("bangBangJi.jpgChicken and sweet corn soup", 6.05, R.drawable.chickensoup, "Chicken stock with creamed sweet corn, sweet corn kernels and eggs. The texture of this soup is often thick.", "Tim's Chinese Food"),
+                new MenuItem("Chicken and corn soup", 6.05, R.drawable.chickensoup, "Chicken stock with creamed sweet corn, sweet corn kernels and eggs. The texture of this soup is often thick.", "Tim's Chinese Food"),
                 new MenuItem("Bang Bang Ji", 6.05, R.drawable.bangbangji, "Chicken breasts are cut into matchstick sized pieces and served on a sheet of green bean paste. Made with hot chili oil.", "Tim's Chinese Food"),
                 new MenuItem("Lo Mein", 6.45, R.drawable.lomein, "Tossed Noodles - unlike chow mein, where the noodles are stir-fried separately, the noodles are tossed and blended with the stir-fry mixture.  They have more of a sauce than chow mein noodles.", "Pearl Harbourfront"),
                 new MenuItem("General Tsao's Chicken", 9.95, R.drawable.generaltso, "Chicken cubes coated in cornstarch and deep-fried, cooked with a sauce that includes hoisin sauce, dark soy sauce and chili peppers.", "Pearl Harbourfront")
@@ -161,7 +185,6 @@ public class SelectMenu extends AppCompatActivity {
         this._restaurant.put("Pizza", new ArrayList<>(Arrays.asList(
                 new MenuItem("Neapolitan pizza", 21.13, R.drawable.neapolitanpizza, "Made with San Marzano tomatoes and mozzarella cheese", "Domino's Pizza"),
                 new MenuItem("Hawaiian pizza", 21.10, R.drawable.pineapplepizza, "Topped with tomato sauce, cheese, pineapple,Canadian bacon and ham", "Domino's Pizza"),
-                new MenuItem("Meatball pizza", 23.45, R.drawable.panmeatball, "Prepared with meatballs. Increasingly popular in Upstate New York in contemporary times", "Papa John's Pizza"),
                 new MenuItem("Chicago-style deep-dish pizza", 28.11, R.drawable.deepdish, "High edge and a deep surface for large amounts of cheese and chunky tomato sauce topped with pepperoni", "Magic Oven"),
                 new MenuItem("Sicilian Pizza", 28.11, R.drawable.sicilian, "square cut, thick crust pizza from, it should always have a spongier consistency than other pizzas.", "Magic Oven"),
                 new MenuItem("Greek Pizza", 28.11, R.drawable.greekpizza, "baked in a round pan that has been heavily coated in olive oil. Lining the pan with oil also allows the bottom of the dough to fry while it bakes.", "Boston Pizza"),
