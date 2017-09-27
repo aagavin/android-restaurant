@@ -2,23 +2,23 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
-        android:id="@+id/ManChi"
-        android:title="ManChi's">
+        android:id="@+id/Remezzo"
+        android:title="Remezzo Italian Bistro">
 
     </item>
     <item
-        android:id="@+id/HeyChina"
-        android:title="HeyChina">
+        android:id="@+id/Stelvio"
+        android:title="Stelvio">
 
     </item>
     <item
-        android:id="@+id/Tim"
-        android:title="Tim's Chinese Food">
+        android:id="@+id/Donatello"
+        android:title="Donatello Restaurant">
 
     </item>
     <item
-        android:id="@+id/Pearl"
-        android:title="Pearl Harbourfront">
+        android:id="@+id/Spaghetti"
+        android:title="Old Spaghetti Factory">
 
     </item>
 </menu>

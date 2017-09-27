@@ -9,22 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="ca.aagavin.aaron.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ca.aagavin.aaron.CuisineType">
+        <activity android:name=".CuisineType">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ca.aagavin.aaron.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name="ca.aagavin.aaron.SelectMenu">
+        <activity android:name=".SelectMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ca.aagavin.aaron.CuisineType" />
+                android:value=".CuisineType" />
+        </activity>
+        <activity android:name=".CustomerInformation">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SelectMenu" />
         </activity>
     </application>
 

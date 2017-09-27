@@ -1,8 +1,9 @@
 package ca.aagavin.aaron;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
@@ -10,7 +11,6 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,36 +37,31 @@ public class SelectMenu extends AppCompatActivity {
 
     }
 
-    private void _displayMenu() {
-        this._createRestaurantMenu();
-        this._totalText = (TextView) findViewById(R.id.totalText);
-        this._totalText.setVisibility(View.VISIBLE);
-        float density = this.getResources().getDisplayMetrics().density;
-
-        // get root LinearLayout
-        this._rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
-        // get user selection from previous section
-        //this._cuisineType = getIntent().getStringExtra("selection");
-
-        // get all resturantchinese items from user selection
-        for(MenuItem item : this._restaurant.get(this._cuisineType)){
-            this._addRow(density, item);
-        }
+    public void buttonCheckoutClick(View view) {
+        Intent nextIntent = new Intent(this, CustomerInformation.class);
+        startActivity(nextIntent);
     }
 
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
-        Toast.makeText(this, "You selected something", Toast.LENGTH_LONG).show();
-        this._displayMenu();
+        if(item.getTitle()!=null) {
+            this._displayMenu(item.getTitle().toString());
+        }
+
+        this._totalText = (TextView) findViewById(R.id.totalText);
+        this._totalText.setVisibility(View.VISIBLE);
+        findViewById(R.id.button_checkout).setVisibility(View.VISIBLE);
+
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         switch (this._cuisineType){
             case "Chinese":
-                getMenuInflater().inflate(R.menu.resturantchinese, menu);
+                getMenuInflater().inflate(R.menu.resturantch, menu);
                 break;
             case "Italian":
                 getMenuInflater().inflate(R.menu.resturantit, menu);
@@ -84,14 +79,29 @@ public class SelectMenu extends AppCompatActivity {
                 break;
         }
 
-        getMenuInflater().inflate(R.menu.resturantchinese, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void _displayMenu(String restaurantName) {
+        this._createRestaurantMenu();
+
+        float density = this.getResources().getDisplayMetrics().density;
+
+        // get root LinearLayout
+        this._rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
+
+        // get all resturantit items from user selection
+        for(MenuItem item : this._restaurant.get(this._cuisineType)){
+            if(item.getRestaurantName().equals(restaurantName)) {
+                this._addRow(density, item);
+            }
+        }
     }
 
     /**
      * Adds a row of elements dynamically
      * @param density screen size
-     * @param item resturantchinese item
+     * @param item restaurant item
      */
     private void _addRow(float density, MenuItem item) {
         // create container layout
@@ -147,7 +157,7 @@ public class SelectMenu extends AppCompatActivity {
     }
 
     /**
-     * Sets up data structure to hold the resturantchinese
+     * Sets up data structure to hold the resturantit
      */
     private void _createRestaurantMenu(){
         this._restaurant = new HashMap<>();
@@ -204,4 +214,5 @@ public class SelectMenu extends AppCompatActivity {
 
 
     }
+
 }
