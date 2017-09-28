@@ -24,6 +24,7 @@ import ca.aagavin.aaron.objects.MenuItem;
 public class SelectMenu extends AppCompatActivity {
 
     private Map<String, List<MenuItem>> _restaurant;
+    private String _selectedRestaurantName;
     private LinearLayout _rootLayout;
     private TextView _totalText;
     private String _cuisineType;
@@ -39,12 +40,16 @@ public class SelectMenu extends AppCompatActivity {
 
     public void buttonCheckoutClick(View view) {
         Intent nextIntent = new Intent(this, CustomerInformation.class);
+        nextIntent.putExtra("cuisineType",this._cuisineType);
+        nextIntent.putExtra("totalPrice", this._totalText.getText().toString());
+        nextIntent.putExtra("restaurantName", this._selectedRestaurantName);
         startActivity(nextIntent);
     }
 
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
         if(item.getTitle()!=null) {
+            this._selectedRestaurantName = item.getTitle().toString();
             this._displayMenu(item.getTitle().toString());
         }
 

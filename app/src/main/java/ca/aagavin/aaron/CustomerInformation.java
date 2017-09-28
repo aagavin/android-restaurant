@@ -2,7 +2,6 @@ package ca.aagavin.aaron;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,16 +12,21 @@ import java.util.regex.Pattern;
 
 public class CustomerInformation extends AppCompatActivity {
 
-    public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
-            Pattern.compile(
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile(
                     "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
-                    Pattern.CASE_INSENSITIVE
-            );
+                    Pattern.CASE_INSENSITIVE);
+    private String _cuisineType;
+    private String _totalPrice;
+    private String _restaurantName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_information);
+
+        this._cuisineType = getIntent().getStringExtra("cuisineType");
+        this._totalPrice = getIntent().getStringExtra("totalPrice");
+        this._restaurantName = getIntent().getStringExtra("restaurantName");
     }
 
     public void button_confirm_click(View view){
@@ -47,18 +51,26 @@ public class CustomerInformation extends AppCompatActivity {
             Toast.makeText(this, "Not all inputs are valid", Toast.LENGTH_SHORT).show();
         }
         else {
-            Intent i = new Intent(this, OrderActivity.class);
-
-            startActivity(i);
+            Intent nextIntent = new Intent(this, OrderActivity.class);
+            nextIntent.putExtra("cuisineType",this._cuisineType);
+            nextIntent.putExtra("totalPrice", this._totalPrice);
+            nextIntent.putExtra("restaurantName", this._restaurantName);
+            nextIntent.putExtra("customerName", ((TextView) findViewById(R.id.editText_name)).getText().toString());
+            nextIntent.putExtra("customerAddress", ((TextView) findViewById(R.id.editText_address)).getText().toString());
+            nextIntent.putExtra("customerCc", ((TextView) findViewById(R.id.editText_cc)).getText().toString());
+            nextIntent.putExtra("customerEmail", ((TextView) findViewById(R.id.editText_email)).getText().toString());
+            nextIntent.putExtra("customerMoreInfo", ((TextView) findViewById(R.id.editText_moreInfo)).getText().toString());
+            nextIntent.putExtra("customerPhone", ((TextView) findViewById(R.id.editText_phone)).getText().toString());
+            startActivity(nextIntent);
         }
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getTitle() == null){
-            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-            alertDialog.setTitle("Nothing 222");
-            alertDialog.show();
+            Intent pervIntent = new Intent(this, SelectMenu.class);
+            pervIntent.putExtra("selection", this._cuisineType);
+            startActivity(pervIntent);
             return true;
         }
         else {

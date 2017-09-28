@@ -35,5 +35,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
         android:text="Where I eat and you pay"
-        android:textSize="20sp" />
+        android:textColor="@color/colorPrimary_text"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 </RelativeLayout>
