@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/Union"
+        android:title="Union Burger">
+
+    </item>
+    <item
+        android:id="@+id/Museum"
+        android:title="Museum Tavern">
+
+    </item>
+    <item
+        android:id="@+id/Woody"
+        android:title="Woody's Burgers">
+
+    </item>
+    <item
+        android:id="@+id/Five"
+        android:title="Five Guys">
+
+    </item>
+</menu>

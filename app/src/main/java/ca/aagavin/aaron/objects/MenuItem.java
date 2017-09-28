@@ -12,7 +12,9 @@ public class MenuItem {
 
     private int image;
 
-    private String Description;
+    private String description;
+
+    private String restaurantName;
 
     public String getName() {
         return name;
@@ -39,17 +41,26 @@ public class MenuItem {
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
-    public MenuItem(String name, double price, int image, String description) {
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
+    }
+
+    public MenuItem(String name, double price, int image, String description, String restaurantName) {
         this.name = name;
         this.price = price;
         this.image = image;
-        Description = description;
+        this.description = description;
+        this.restaurantName = restaurantName;
     }
 }

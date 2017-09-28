@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/ManChi"
+        android:title="ManChi's">
+
+    </item>
+    <item
+        android:id="@+id/HeyChina"
+        android:title="HeyChina">
+
+    </item>
+    <item
+        android:id="@+id/Tim"
+        android:title="Tim's Chinese Food">
+
+    </item>
+    <item
+        android:id="@+id/Pearl"
+        android:title="Pearl Harbourfront">
+
+    </item>
+</menu>

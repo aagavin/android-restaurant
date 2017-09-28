@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/Louis"
+        android:title="Louis Souvlaki &amp; Grill">
+
+    </item>
+    <item
+        android:id="@+id/Arkadia"
+        android:title="The Arkadia House">
+
+    </item>
+    <item
+        android:id="@+id/Jimmy"
+        android:title="Jimmy The Greek">
+
+    </item>
+    <item
+        android:id="@+id/Souvlaki"
+        android:title="The Souvlaki Hut">
+
+    </item>
+</menu>
