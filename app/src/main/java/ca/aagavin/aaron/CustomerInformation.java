@@ -19,6 +19,10 @@ public class CustomerInformation extends AppCompatActivity {
     private String _totalPrice;
     private String _restaurantName;
 
+    /**
+     * Runs when activity starts
+     * @param savedInstanceState Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,10 @@ public class CustomerInformation extends AppCompatActivity {
         this._restaurantName = getIntent().getStringExtra("restaurantName");
     }
 
+    /**
+     * validates all the user inputs
+     * @param view view
+     */
     public void button_confirm_click(View view){
         boolean allInputsValid;
         allInputsValid = this._emptyTextValid(R.id.editText_name);
@@ -65,6 +73,11 @@ public class CustomerInformation extends AppCompatActivity {
         }
     }
 
+    /**
+     * Hack to fix the back button
+     * @param item selected menu item
+     * @return bool
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getTitle() == null){
@@ -78,6 +91,11 @@ public class CustomerInformation extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if an editTest is empty
+     * @param id of view
+     * @return bool
+     */
     private boolean _emptyTextValid(int id){
         TextView textView = (TextView) findViewById(id);
         boolean valid = textView.getText().toString().length()!=0;
@@ -87,6 +105,11 @@ public class CustomerInformation extends AppCompatActivity {
         return valid;
     }
 
+    /**
+     * Validates a credit card editText
+     * @param id of view
+     * @return bool
+     */
     private boolean _ccTextValid(int id){
         TextView textView = (TextView) findViewById(id);
         boolean valid = textView.getText().toString().length()==16;
@@ -96,6 +119,11 @@ public class CustomerInformation extends AppCompatActivity {
         return valid;
     }
 
+    /**
+     * Validates a phone editText
+     * @param id of view
+     * @return bool
+     */
     private  boolean _phoneValid(int id){
         TextView textView = (TextView) findViewById(id);
         boolean valid = textView.getText().toString().matches("[0-9]+") && textView.getText().length() == 10;
@@ -105,6 +133,12 @@ public class CustomerInformation extends AppCompatActivity {
         return valid;
     }
 
+    /**
+     * Validates an email editText
+     * @param id of view
+     * @return bool     * @param id
+     * @return
+     */
     private boolean _emailTextValid(int id){
         TextView textView = (TextView) findViewById(id);
         boolean valid = VALID_EMAIL_ADDRESS_REGEX.matcher(textView.getText().toString()).find();

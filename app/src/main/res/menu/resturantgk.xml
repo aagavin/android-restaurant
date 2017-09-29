@@ -3,22 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/Louis"
-        android:title="Louis Souvlaki &amp; Grill">
+        android:title="@string/louis_souvlaki_amp_grill">
 
     </item>
     <item
         android:id="@+id/Arkadia"
-        android:title="The Arkadia House">
+        android:title="@string/the_arkadia_house">
 
     </item>
     <item
         android:id="@+id/Jimmy"
-        android:title="Jimmy The Greek">
+        android:title="@string/jimmy_the_greek">
 
     </item>
     <item
         android:id="@+id/Souvlaki"
-        android:title="The Souvlaki Hut">
+        android:title="@string/the_souvlaki_hut">
 
     </item>
 </menu>

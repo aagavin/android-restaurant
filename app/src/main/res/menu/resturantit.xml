@@ -3,22 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/Remezzo"
-        android:title="Remezzo Italian Bistro">
+        android:title="@string/remezzo_italian_bistro">
 
     </item>
     <item
         android:id="@+id/Stelvio"
-        android:title="Stelvio">
+        android:title="@string/stelvio">
 
     </item>
     <item
         android:id="@+id/Donatello"
-        android:title="Donatello Restaurant">
+        android:title="@string/donatello_restaurant">
 
     </item>
     <item
         android:id="@+id/Spaghetti"
-        android:title="Old Spaghetti Factory">
+        android:title="@string/old_spaghetti_factory">
 
     </item>
 </menu>

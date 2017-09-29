@@ -29,6 +29,10 @@ public class SelectMenu extends AppCompatActivity {
     private TextView _totalText;
     private String _cuisineType;
 
+    /**
+     * Runs when the activity run
+     * @param savedInstanceState Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,10 @@ public class SelectMenu extends AppCompatActivity {
 
     }
 
+    /**
+     * Handles the button event handler
+     * @param view View
+     */
     public void buttonCheckoutClick(View view) {
         Intent nextIntent = new Intent(this, CustomerInformation.class);
         nextIntent.putExtra("cuisineType",this._cuisineType);
@@ -46,6 +54,11 @@ public class SelectMenu extends AppCompatActivity {
         startActivity(nextIntent);
     }
 
+    /**
+     * Handles event when user click on a menu item
+     * @param item MenuItem
+     * @return bool
+     */
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
         if(item.getTitle()!=null) {
@@ -53,6 +66,7 @@ public class SelectMenu extends AppCompatActivity {
             this._displayMenu(item.getTitle().toString());
         }
 
+        findViewById(R.id.textView_helptext).setVisibility(View.INVISIBLE);
         this._totalText = (TextView) findViewById(R.id.totalText);
         this._totalText.setVisibility(View.VISIBLE);
         findViewById(R.id.button_checkout).setVisibility(View.VISIBLE);
@@ -61,6 +75,11 @@ public class SelectMenu extends AppCompatActivity {
     }
 
 
+    /**
+     * Changes the menu based on user input
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -87,6 +106,10 @@ public class SelectMenu extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * loops through the restaurant data structure
+     * @param restaurantName Name of resturant
+     */
     private void _displayMenu(String restaurantName) {
         this._createRestaurantMenu();
 
@@ -162,7 +185,7 @@ public class SelectMenu extends AppCompatActivity {
     }
 
     /**
-     * Sets up data structure to hold the resturantit
+     * Sets up data structure to hold the restaurant
      */
     private void _createRestaurantMenu(){
         this._restaurant = new HashMap<>();
