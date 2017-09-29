@@ -10,6 +10,10 @@ import android.widget.RadioGroup;
 public class CuisineType extends AppCompatActivity {
 
 
+    /**
+     * Runs when the activity runs
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,10 @@ public class CuisineType extends AppCompatActivity {
 
     }
 
+    /**
+     * Starts the next activity when a user selects a cusine
+     * @param selectText
+     */
     public void selectedType(String selectText){
         Intent i = new Intent(this, SelectMenu.class);
         i.putExtra("selection", selectText);

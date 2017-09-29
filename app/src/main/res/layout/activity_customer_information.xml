@@ -71,7 +71,8 @@
             android:layout_gravity="left|center_vertical"
             android:text="Credit Card:"
             android:textColor="@color/colorPrimary_text"
-            android:textSize="21sp" />
+            android:textSize="21sp"
+            />
 
         <EditText
             android:id="@+id/editText_cc"
@@ -79,7 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right|fill_vertical"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:maxLength="16"
+            android:inputType="numberDecimal" />
 
     </TableRow>
 

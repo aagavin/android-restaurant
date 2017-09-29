@@ -18,6 +18,11 @@ public class OrderActivity extends AppCompatActivity {
     private String _customerMoreInfo;
     private String _customerPhone;
 
+    /**
+     * Runs when activity run
+     * Gets values from previous intent
+     * @param savedInstanceState Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +42,9 @@ public class OrderActivity extends AppCompatActivity {
         _setData();
     }
 
+    /**
+     * Sets the textView of final text views
+     */
     private void _setData() {
         ((TextView) findViewById(R.id.textView_cuisineType)).setText(this._cuisineType);
         ((TextView) findViewById(R.id.textView_totalPrice)).setText(this._totalPrice);
@@ -49,6 +57,10 @@ public class OrderActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.textView_customerPhone)).setText(this._customerPhone);
     }
 
+    /**
+     * Goes
+     * @param view
+     */
     public void submitOrderClick(View view){
         startActivity(new Intent(this, MainActivity.class));
     }
