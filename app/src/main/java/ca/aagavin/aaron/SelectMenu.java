@@ -66,6 +66,7 @@ public class SelectMenu extends AppCompatActivity {
             this._displayMenu(item.getTitle().toString());
         }
 
+        findViewById(R.id.textView_helptext).setVisibility(View.INVISIBLE);
         this._totalText = (TextView) findViewById(R.id.totalText);
         this._totalText.setVisibility(View.VISIBLE);
         findViewById(R.id.button_checkout).setVisibility(View.VISIBLE);

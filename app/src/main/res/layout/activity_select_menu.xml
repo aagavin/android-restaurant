@@ -19,6 +19,15 @@
 
 
         <TextView
+            android:id="@+id/textView_helptext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use the menu to select a resutrant"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary_text"
+            android:textSize="30sp" />
+
+        <TextView
             android:id="@+id/totalText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
