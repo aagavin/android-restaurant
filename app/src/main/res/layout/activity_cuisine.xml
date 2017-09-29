@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Chinese" />
+            android:text="@string/chinese" />
 
         <RadioButton
             android:id="@+id/italian_radio"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Italian" />
+            android:text="@string/italian" />
 
         <RadioButton
             android:id="@+id/cheese_radio"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Burgers" />
+            android:text="@string/burgers" />
 
         <RadioButton
             android:id="@+id/hawaiian_radio"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Pizza" />
+            android:text="@string/pizza" />
 
         <RadioButton
             android:id="@+id/greek_radio"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
-            android:text="Greek" />
+            android:text="@string/greek" />
     </RadioGroup>
 
 </LinearLayout>

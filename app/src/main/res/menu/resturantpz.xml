@@ -3,22 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/Domino"
-        android:title="Domino's Pizza">
+        android:title="@string/domino_s_pizza">
 
     </item>
     <item
         android:id="@+id/Magic"
-        android:title="Magic Oven">
+        android:title="@string/magic_oven">
 
     </item>
     <item
         android:id="@+id/Boston"
-        android:title="Boston Pizza">
+        android:title="@string/boston_pizza">
 
     </item>
     <item
         android:id="@+id/Papa"
-        android:title="Papa John's Pizza">
+        android:title="@string/papa_john_s_pizza">
 
     </item>
 </menu>

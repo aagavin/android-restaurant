@@ -34,7 +34,7 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
-        android:text="Where I eat and you pay"
+        android:text="@string/where_i_eat_and_you_pay"
         android:textColor="@color/colorPrimary_text"
         android:textSize="20sp"
         android:textStyle="italic" />

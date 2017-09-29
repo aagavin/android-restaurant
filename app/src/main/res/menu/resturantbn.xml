@@ -3,22 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/Union"
-        android:title="Union Burger">
+        android:title="@string/union_burger">
 
     </item>
     <item
         android:id="@+id/Museum"
-        android:title="Museum Tavern">
+        android:title="@string/museum_tavern">
 
     </item>
     <item
         android:id="@+id/Woody"
-        android:title="Woody's Burgers">
+        android:title="@string/Woody">
 
     </item>
     <item
         android:id="@+id/Five"
-        android:title="Five Guys">
+        android:title="@string/five_guys">
 
     </item>
 </menu>

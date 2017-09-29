@@ -3,22 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/ManChi"
-        android:title="ManChi's">
+        android:title="@string/manchi_s">
 
     </item>
     <item
         android:id="@+id/HeyChina"
-        android:title="HeyChina">
+        android:title="@string/heychina">
 
     </item>
     <item
         android:id="@+id/Tim"
-        android:title="Tim's Chinese Food">
+        android:title="@string/tim_s_chinese_food">
 
     </item>
     <item
         android:id="@+id/Pearl"
-        android:title="Pearl Harbourfront">
+        android:title="@string/pearl_harbourfront">
 
     </item>
 </menu>

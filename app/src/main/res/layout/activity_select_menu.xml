@@ -22,7 +22,7 @@
             android:id="@+id/textView_helptext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Use the menu to select a resutrant"
+            android:text="@string/use_the_menu_to_select_a_resutrant"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary_text"
             android:textSize="30sp" />
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginTop="100dp"
-            android:text="Total: $0.00"
+            android:text="@string/total_0_00"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary_text"
             android:textStyle="bold"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="buttonCheckoutClick"
-            android:text="Checkout"
+            android:text="@string/checkout"
             android:visibility="invisible" />
     </LinearLayout>
 
